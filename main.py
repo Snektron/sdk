@@ -41,7 +41,7 @@ Options:
   --emulator=<emulator>     Specifies an alternate emulator. [default: {0}]
   --debugger=<debugger>     Specifies an alternate debugger. [default: {1}]
   --platform=<platform>     Specifies the calculator model to target. [default: TI84pSE]
-                            Supported platforms are: TI73, TI83p, TI83pSE, TI84p, TI84pSE, TI84pCSE
+                            Supported platforms are: TI73, TI83p, TI83pSE, TI84p, TI84pSE, TI84pCSE, PICO80
   --vcs=<vcs>               Specifies an alternate version control system. [default: git]
                             Supported systems are: git, hg
   --kernel-source=<path>    Instead of downloading a kernel, compile one from <path>. Useful for testing kernels.
@@ -61,7 +61,7 @@ from query import execute as cmd_query
 args = docopt(doc, version="1.9.5")
 
 if args["--platform"]:
-    if not args["--platform"] in [ "TI73", "TI83p", "TI83pSE", "TI84p", "TI84pSE", "TI84pCSE" ]:
+    if not args["--platform"] in [ "TI73", "TI83p", "TI83pSE", "TI84p", "TI84pSE", "TI84pCSE", "PICO80" ]:
         stderr.write("'{0}' is not a supported platform.\n".format(args["--platform"]))
         exit(1)
     if args["--emulator"] == 'z80e-sdl':
